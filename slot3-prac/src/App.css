@@ -1,0 +1,10 @@
+#root {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: cadetblue;
+  color: white;
+}
+
+.avatar {
+  margin-inline: auto;
+  width: 80%;
+}
