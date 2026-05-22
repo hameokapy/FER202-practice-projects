@@ -1,0 +1,24 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  transition: all 0.4s ease;
+}
+
+.app-container.light-bg {
+  background: linear-gradient(
+    135deg,
+    #dbeafe,
+    #f8fafc
+  );
+}
+
+.app-container.dark-bg {
+  background: linear-gradient(
+    135deg,
+    #111827,
+    #030712
+  );
+}

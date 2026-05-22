@@ -1,15 +1,17 @@
 import { useState } from "react";
 import "./StudentCard.css";
 
-const StudentCard = ({ student }) => {
+const StudentCard = ({
+  student,
+  darkMode,
+  setDarkMode,
+}) => {
   const [status, setStatus] = useState("Online");
   const [likes, setLikes] = useState(0);
-  const [darkMode, setDarkMode] = useState(false);
 
   return (
     <div className={`student-card ${darkMode ? "dark" : ""}`}>
       
-      {/* TOP BAR */}
       <div className="top-bar">
         <button
           className="theme-toggle"
@@ -19,7 +21,6 @@ const StudentCard = ({ student }) => {
         </button>
       </div>
 
-      {/* PROFILE */}
       <div className="card-header">
         <img src={student.avatar} alt="avatar" />
 
@@ -36,7 +37,6 @@ const StudentCard = ({ student }) => {
         </span>
       </div>
 
-      {/* INFO */}
       <div className="student-info">
         <div className="info-row">
           <span>ID</span>
@@ -49,7 +49,6 @@ const StudentCard = ({ student }) => {
         </div>
       </div>
 
-      {/* HOBBIES */}
       <div className="hobby-section">
         <h3>Hobbies</h3>
 
@@ -65,7 +64,6 @@ const StudentCard = ({ student }) => {
         </div>
       </div>
 
-      {/* ACTIONS */}
       <div className="card-actions">
         <button
           className="primary-btn"
