@@ -46,10 +46,8 @@ const Headers = () => {
 const changeMode = (mode) => {
   if(mode==="light") {
     document.getElementById("root").className = "light";
-    document.querySelectorAll("p").className="light";
   } else if (mode === 'dark') {
     document.getElementById("root").className = "dark";
-    document.querySelectorAll("p").className="dark";
   }
 }
 

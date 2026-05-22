@@ -1,4 +1,3 @@
-/* App.css */
 
 body {
   margin: 0;
@@ -137,10 +136,12 @@ body {
   color: white;
 }
 
-p.dark {
+.student-card.dark > h2,
+.student-card.dark > p {
   color: white;
 }
 
-p.light {
+.student-card.light > h2,
+.student-card.light > p  {
   color: black;
 }

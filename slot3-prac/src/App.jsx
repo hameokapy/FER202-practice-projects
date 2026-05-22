@@ -46,12 +46,120 @@ const Header = () => {
   )
 }
 
+const products = [
+    {
+      id: 1,
+      name: "Laptop",
+      price: 2000,
+      stock: true
+    },
+    {
+      id: 2,
+      name: "Mouse",
+      price: 20,
+      stock: false
+    }
+  ];
+  //BT1: Cho mảng các sp. Hiển thị danh sách các sản phẩm, với tình trạng còn hàng hay hết hàng trong stock
+
+  function generateProductList() {
+    return (
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Status</th>
+          </tr>
+          </thead>
+          <tbody>
+            {products.map(item => {
+              return (
+                <tr key={item.id}>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>{item.price}</td>
+                  <td>{item.stock ? 'Còn hàng' : 'Hết hàng'}</td>
+                </tr>
+              )
+            })}
+          </tbody>
+      </table>
+    );
+  }
+
+  const students = [
+      {
+          id: 1,
+          name: "Nguyen Van A",
+          age: 20,
+          score: 8.5
+      },
+      {
+          id: 2,
+          name: "Tran Thi B",
+          age: 21,
+          score: 6.8
+      },
+      {
+          id: 3,
+          name: "Le Van C",
+          age: 19,
+          score: 4.2
+      },
+      {
+          id: 4,
+          name: "Pham Thi D",
+          age: 22,
+          score: 9.1
+      },
+      {
+          id: 5,
+          name: "Hoang Van E",
+          age: 20,
+          score: 5.0
+      }
+  ];
+  //BT2: Cho 1 mảng các đối tượng Student (ID, Name, Age, Score): Hiển thị danh sách sinh viên, hiển thị ở cột kết quả là nếu điểm >=8 "Giỏi", điểm >=5 "Khá" Ngược lại là "Trung Bình"
+
+  function generateStudentList() {
+    return (
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Score</th>
+          </tr>
+          </thead>
+          <tbody>
+            {students.map(std => {
+              return (
+                <tr>
+                  <td>{std.id}</td>
+                  <td>{std.name}</td>
+                  <td>{std.age}</td>
+                  <td>{std.score > 8 ? "Giỏi" : std.score > 5 ? "Khá" : "Trung bình"}</td>
+                </tr>
+              )
+            })}
+          </tbody>
+      </table>
+    );
+  }
+
 const App = () => {
   return (
     <>
     <h1>Welcome to react!</h1>
     <p>Hello world</p>
-    <Header />
+    {/* <Header /> */}
+    <h1>Product list:</h1>
+    {generateProductList()}
+    <h1>Student List:</h1>
+    {generateStudentList()}
     </>
   )
 }
