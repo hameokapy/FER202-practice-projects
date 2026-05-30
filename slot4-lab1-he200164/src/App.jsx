@@ -7,11 +7,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div
-      className={`app-container ${
-        darkMode ? "dark-bg" : "light-bg"
-      }`}
-    >
+    <div className={`app-container ${darkMode ? "dark-bg" : "light-bg"}`}>
       <StudentCard
         student={student}
         darkMode={darkMode}

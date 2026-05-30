@@ -1,11 +1,7 @@
 import { useState } from "react";
 import "./StudentCard.css";
 
-const StudentCard = ({
-  student,
-  darkMode,
-  setDarkMode,
-}) => {
+const StudentCard = ({student, darkMode, setDarkMode}) => {
   const [status, setStatus] = useState("Online");
   const [likes, setLikes] = useState(0);
 
@@ -31,9 +27,7 @@ const StudentCard = ({
         </p>
 
         <span className={`status ${status.toLowerCase()}`}>
-          {status === "Online"
-            ? "🟢 Online"
-            : "🔴 Offline"}
+          {status === "Online" ? "🟢 Online" : "🔴 Offline"}
         </span>
       </div>
 
@@ -54,10 +48,7 @@ const StudentCard = ({
 
         <div className="hobby-tags">
           {student.hobbies.map((hobby, index) => (
-            <span
-              key={index}
-              className={`hobby-tag hobby-${index}`}
-            >
+            <span key={index} className={`hobby-tag hobby-${index}`}>
               {hobby}
             </span>
           ))}
@@ -75,11 +66,7 @@ const StudentCard = ({
         <button
           className="secondary-btn"
           onClick={() =>
-            setStatus(
-              status === "Online"
-                ? "Offline"
-                : "Online"
-            )
+            setStatus(status === "Online" ? "Offline" : "Online")
           }
         >
           Change Status
