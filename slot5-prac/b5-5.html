@@ -4,44 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <title>B5-5</title>
+    <style>
+      .bg-custom-orange-light {
+        background-color: #f1d6b9;
+        color: #de7233;
+      }
+      .bg-custom-orange-dark {
+        background-color: #f38f31;
+      }
+      .btn-custom {
+        background-color: #de7233;
+        color:white;
+        margin: 0;
+        padding-inline: 1em;
+        padding-block: 0.4em;
+        border-radius: 5px;
+        border: 2px solid grey;
+      }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <img src="https://upload.wikimedia.org/wikipedia/vi/2/2d/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_FPT.svg"
-          class="navbar-brand" style="width: 100px;"  
-        ></img>
-        <ul class="navbar-nav gap-2">
-            <li>Trang chủ</li>
-            <li>Ngành học</li>
-            <li>Tuyển sinh</li>
-            <li>Sinh viên</li>
-        </ul>
-        
-    <!-- 
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Trang chủ</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Giới thiệu</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dịch vụ
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Dịch vụ 1</a></li>
-            <li><a class="dropdown-item" href="#">Dịch vụ 2</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Dịch vụ 3</a></li>
+    <nav class="navbar navbar-expand-lg px-3 bg-custom-orange-light">
+        <a href="#">
+          <img src="https://upload.wikimedia.org/wikipedia/vi/2/2d/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_FPT.svg"
+          class="navbar-brand" style="width: 100px;"/>
+        </a>
+
+        <div class="collapse navbar-collapse container justify-content-between">
+          <ul class="navbar-nav gap-4">
+              <li><i class="bi bi-house-door-fill"></i> Trang chủ</li>
+              <li><i class="bi bi-info-circle-fill"></i> Ngành học</li>
+              <li><i class="bi bi-person-vcard-fill"></i> Tuyển sinh</li>
+              <li><i class="bi bi-person-badge-fill"></i> Sinh viên</li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Liên hệ</a>
-        </li>
-      </ul>
-       -->
+
+          <form >
+            <label for="searchInput">Search: </label>
+            <input type="text" name="searchInput" id="searchInput">
+          </form>
+        </div>
     </nav>
+
+    <section class="bg-custom-orange-dark">
+      <img src="https://international.fpt.edu.vn/web/image/image.gallery/1358/image" 
+        alt="Hero image"
+        class="w-50 img-fluid px-3 py-5 d-block mx-auto">
+    </section>
+
+    <div class="w-75 mx-auto">
+      <div class="d-inline-block bg-body-secondary px-3 py-2 rounded-bottom">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item teda">Home</li>
+          <li class="breadcrumb-item active">Student</li>
+        </ol>
+      </div>
+
+      <section class="my-3">
+        <h2 class="text-center">Students Detail</h2>
+        <div id="student-card" class="mt-2 row text-center gy-3"></div>
+      </section>
+    </div>
+
+    <footer class="bg-custom-orange-dark row py-4 px-5">
+      <div class="col-6 d-flex flex-column">
+        <h4 class="mb-3">Our address</h4>
+        <p class="mb-1">Khu đô thị FPT Đà Nẵng</p>
+        <p class="mb-1"><i class="bi bi-telephone-fill"></i> +84023111111</p>
+        <p class="mb-1"><i class="bi bi-envelope-fill"></i> <a href="mailto:fptudn@fpt.edu.vn">fptudn@fpt.edu.vn</a></p>
+      </div>
+      <div class="col-6 align-self-center text-center">
+        <i class="bi bi-facebook fs-2"></i>
+        <i class="bi bi-linkedin fs-2"></i>
+        <i class="bi bi-youtube fs-2"></i>
+      </div>
+      <p class="col-12 text-center mb-0">&copy; Copyright 2023</p>
+    </footer>
+
+    <script>
+      const students = [
+        {
+          code: "DE160182",
+          name: "Nguyễn Hữu Quốc Khánh",
+          birthplace: "Đà Nẵng"
+        },
+        {
+          code: "DE160377",
+          name: "Choy Vĩnh Thiện",
+          birthplace: "Quảng Nam"
+        },
+        {
+          code: "DE160574",
+          name: "Đỗ Nguyên Phúc",
+          birthplace: "Quảng Nam"
+        },
+        {
+          code: "DE170049",
+          name: "Lê Hoàng Minh",
+          birthplace: "Đà Nẵng"
+        },
+      ];
+
+      const imgLink = "https://img.magnific.com/premium-vector/cute-boy-thai-student-uniform-mascot-cartoon-character-presenting-posture-vector-illustration_99413-331.jpg";
+
+      const container = document.getElementById("student-card");
+      let html = "";
+      students.forEach(student => {
+        html += `
+          <div class="col-6">
+            <img src="${imgLink}" alt="avatar" class="img-thumbnail w-75">
+            <h5>${student.code}</h5>
+            <div class="d-flex justify-content-evenly"> 
+              <span>${student.name}</span>
+              <span>${student.birthplace}</span>
+            </div>
+            <div class="d-flex justify-content-evenly">
+              <div>
+                <input type="radio" />
+                <label>Absent</label>
+              </div>
+              <div>
+                <input type="radio" />
+                <label>Present</label>
+              </div>
+            </div>
+            <button class="btn-custom">Submit</button>
+          </div>
+        `
+      });
+      container.innerHTML = html;
+    </script>
 </body>
 </html>
