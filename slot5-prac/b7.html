@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>B7</title>
+</head>
+<body>
+    <h2>Cards Columns</h2>
+    <div class="row" id="card-container"></div>
+    <script>
+        const colors = ['blue', 'yellow', 'red'];
+        const list = [
+            {
+                imgLink: "https://hips.hearstapps.com/hmg-prod/images/2020-honda-hr-v-102-1573753776.jpg?crop=0.917xw:0.773xh;0.0831xw,0.227xh&resize=2048:*",
+                pContent: "Some text inside the first card",
+                color: colors[0]
+            },
+            {
+                imgLink: "https://hips.hearstapps.com/hmg-prod/images/2020-honda-hr-v-102-1573753776.jpg?crop=0.917xw:0.773xh;0.0831xw,0.227xh&resize=2048:*",
+                pContent: "Some text inside the first card",
+                color: colors[1]
+            },
+            {
+                imgLink: "https://hips.hearstapps.com/hmg-prod/images/2020-honda-hr-v-102-1573753776.jpg?crop=0.917xw:0.773xh;0.0831xw,0.227xh&resize=2048:*",
+                pContent: "Some text inside the first card",
+                color: colors[2]
+            }
+        ]
+
+        const cardParent = document.querySelector("#card-container");
+
+        let html = "";
+
+        list.forEach(item => {
+            html += `
+                <div class='col-4'>
+                    <div style="background-color:${item.color}" class='card p-3 text-center'>
+                        <img src = ${item.imgLink} class='card-img-top rounded-0'/>
+                            <p class="card-text">${item.pContent}</p>
+                    </div>
+                </div>
+            `
+        });
+
+        cardParent.innerHTML = html;
+    </script>
+</body>
+</html>
