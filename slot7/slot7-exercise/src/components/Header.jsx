@@ -1,6 +1,9 @@
 import {Button, Container, Form, Nav, Navbar} from 'react-bootstrap'
+import { useTheme } from '../contexts/ThemeContext';
 
 const Header = () => {
+    const {darkMode, toggleTheme } = useTheme();
+
     return (
         <Navbar bg='dark' variant='dark'>
             <Container>
@@ -13,9 +16,15 @@ const Header = () => {
                 <Form className='d-flex'>
                     <Form.Control placeholder='Search' className='me-1'/>
                     <Button variant='danger'>
-                        <i class="bi bi-search"></i>
+                        <i className="bi bi-search"></i>
                     </Button>
                 </Form>
+                <Button className='ms-1'
+                    variant={darkMode ? "light" : "dark"}
+                    onClick={toggleTheme}
+                >
+                    {darkMode ? "☀️" : "🌙"}
+                </Button>
             </Container>
         </Navbar>
     )
