@@ -14,10 +14,10 @@ const Footer = () => {
                     <Col md={6}>
                         <h5 className="fw-bold mb-3 text-uppercase">Student Developer</h5>
                         <ul className="list-unstyled text-secondary">
-                            <li className="mb-2"><strong>Name:</strong> Nguyen Van A</li>
-                            <li className="mb-2"><strong>ID:</strong> SE123456</li>
-                            <li className="mb-2"><strong>Class:</strong> SE18XX</li>
-                            <li className="mb-2"><strong>Email:</strong> student@fpt.edu.vn</li>
+                            <li className="mb-2"><strong>Name:</strong> Le Thu Ha</li>
+                            <li className="mb-2"><strong>ID:</strong> HE200164</li>
+                            <li className="mb-2"><strong>Class:</strong> SE2009</li>
+                            <li className="mb-2"><strong>Email:</strong> hameo.kapy@gmail.com</li>
                         </ul>
                     </Col>
                 </Row>
