@@ -10,6 +10,27 @@ const ProductCard = ({ product, onAddToCart }) => {
         setTimeout(() => setIsAdded(false), 2000);
     };
 
+    const getBadgeConfig = (status) => {
+        const statusText = status.toLowerCase();
+        
+        if (statusText.includes('sale')) {
+            return { bg: 'danger', text: 'light' };     
+        }
+        if (statusText.includes('new')) {
+            return { bg: 'primary', text: 'light' };    
+        }
+        if (statusText.includes('low')) {
+            return { bg: 'warning', text: 'dark' };     
+        }
+        if (statusText.includes('out')) {
+            return { bg: 'secondary', text: 'light' };  
+        }
+        
+        return { bg: 'success', text: 'light' };       
+    };
+
+    const badgeConfig = getBadgeConfig(product.status);
+
     return (
         <Card className="h-100 shadow-sm border-0 rounded-4 overflow-hidden" style={{ transition: "transform 0.2s" }}>
             <div className="position-relative">
@@ -19,8 +40,9 @@ const ProductCard = ({ product, onAddToCart }) => {
                     style={{ height: '400px', objectFit: 'cover' }} 
                 />
                 <Badge 
-                    bg="dark" 
-                    className="position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill shadow-sm"
+                    bg={badgeConfig.bg} 
+                    text={badgeConfig.text}
+                    className="position-absolute top-0 end-0 m-3 px-3 py-2 rounded-pill shadow-sm fw-semibold"
                 >
                     {product.status}
                 </Badge>
