@@ -1,4 +1,4 @@
-import { Carousel, Image } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
 
 const Banner = ({ slideshowData }) => {
     return (
