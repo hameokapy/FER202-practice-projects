@@ -13,7 +13,7 @@ const HomePage = () => {
     };
 
     return (
-        <div className="d-flex flex-column min-vh-100">
+        <div className="d-flex flex-column min-vh-100 bg-light">
             <Header cartCount={cartCount} />
             <main className="flex-grow-1">
                 <Banner slideshowData={data.slideshow} />
