@@ -4,23 +4,19 @@ import { Card, Button, Badge } from 'react-bootstrap';
 const ProductCard = ({ product, onAddToCart }) => {
     const [isAdded, setIsAdded] = useState(false);
 
+    const isSoldOut = product.quantity === 0;
+
     const handleAddToCart = () => {
         setIsAdded(true);
-        onAddToCart();
+        onAddToCart(product);
         setTimeout(() => setIsAdded(false), 2000);
     };
 
     const getBadgeConfig = (status) => {
         const statusText = status.toLowerCase();
         
-        if (statusText.includes('sale')) {
-            return { bg: 'danger', text: 'light' };     
-        }
-        if (statusText.includes('new')) {
-            return { bg: 'primary', text: 'light' };    
-        }
-        if (statusText.includes('low')) {
-            return { bg: 'warning', text: 'dark' };     
+        if (statusText.includes('in')) {
+            return { bg: 'success', text: 'light' };    
         }
         if (statusText.includes('out')) {
             return { bg: 'secondary', text: 'light' };  
@@ -64,7 +60,7 @@ const ProductCard = ({ product, onAddToCart }) => {
                         variant={isAdded ? "secondary" : "dark"} 
                         className="w-100 fw-bold py-2 rounded-pill"
                         onClick={handleAddToCart}
-                        disabled={isAdded}
+                        disabled={isAdded || isSoldOut}
                     >
                         {isAdded ? "✓ Added to Cart" : "Add to Cart"}
                     </Button>

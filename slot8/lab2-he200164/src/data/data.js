@@ -25,42 +25,48 @@ export const data = {
             imageLink: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=500&h=600&q=80",
             name: "Man's Hoodie",
             price: 450000,
-            status: "In Stock"
+            status: "IN_STOCK",
+            quantity: 15
         },
         {
             id: 2,
             imageLink: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&h=600&q=80",
             name: "Women's Summer Dress",
             price: 550000,
-            status: "Sale 20%"
+            status: "IN_STOCK",
+            quantity: 3
         },
         {
             id: 3,
             imageLink: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=500&h=600&q=80",
             name: "Classic Denim Jacket",
             price: 850000,
-            status: "In Stock"
+            status: "OUT_OF_STOCK",
+            quantity: 0
         },
         {
             id: 4,
             imageLink: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&h=600&q=80",
             name: "Basic White T-Shirt",
             price: 200000,
-            status: "Low Stock"
+            status: "IN_STOCK",
+            quantity: 5
         },
         {
             id: 5,
             imageLink: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=500&h=600&q=80",
             name: "Leather Crossbody Bag",
             price: 1200000,
-            status: "New Arrival"
+            status: "IN_STOCK",
+            quantity: 2
         },
         {
             id: 6,
             imageLink: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=500&h=600&q=80",
             name: "Aviator Sunglasses",
             price: 350000,
-            status: "In Stock"
+            status: "IN_STOCK",
+            quantity: 11
         }
     ]
 };

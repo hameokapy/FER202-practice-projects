@@ -1,7 +1,7 @@
 import { Navbar, Nav, Container, Badge, Button } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa';
 
-const Header = ({ cartCount }) => {
+const Header = ({ cartCount, cartData }) => {
     return (
         <Navbar bg="white" expand="lg" sticky="top" className="border-bottom py-3">
             <Container>
@@ -22,7 +22,7 @@ const Header = ({ cartCount }) => {
                             <FaShoppingCart size={18} className="me-2" />
                             <span className="fw-semibold">Cart</span>
                             <Badge bg="danger" className="ms-2 rounded-circle px-2 py-1">
-                                {cartCount}
+                                {cartCount}: {cartData.reduce((total, item) => total + item.price, 0).toLocaleString('vi-VN')} đ
                             </Badge>
                         </Button>
                     </Nav>
