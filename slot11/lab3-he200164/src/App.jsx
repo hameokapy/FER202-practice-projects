@@ -85,13 +85,7 @@ export default function App() {
                     onChange={(e) => setFilterMajor(e.target.value)}
                 >
                     <option value="All Majors">All Majors</option>
-                    {
-                      students.map(student => (<option key={student.id} value={student.major}>{student.major}</option>))
-                    }
-                    {/* <option value="Information Technology">Information Technology</option>
-                    <option value="Business Administration">Business Administration</option>
-                    <option value="Marketing">Marketing</option>
-                    <option value="Software Engineering">Software Engineering</option> */}
+                    {students.map(student => (<option key={student.id} value={student.major}>{student.major}</option>))}
                 </select>
             </div>
 
