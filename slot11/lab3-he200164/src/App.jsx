@@ -4,6 +4,7 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import { useTheme } from "./contexts/ThemeContext";
 import StudentForm from "./components/StudentForm";
 import StudentList from "./components/StudentList";
+import { majorList } from "./data/initialStudents";
 
 const initialStudents = [
     { id: 1718928000000, name: "Nguyễn Văn A", age: 21, major: "Software Engineering" },
@@ -25,22 +26,22 @@ export default function App() {
     const [searchTerm, setSearchTerm] = useState("");
     const [filterMajor, setFilterMajor] = useState("All Majors");
 
-    const handleAddOrEdit = useCallback(() => { (studentData) => {
+    const handleAddOrEdit = useCallback((studentData) => { 
         if (editingStudent) {
             dispatch({ type: ACTIONS.UPDATE_STUDENT, payload: studentData });
             setEditingStudent(null); 
         } else {
             dispatch({ type: ACTIONS.ADD_STUDENT, payload: studentData });
         }
-    }},[editingStudent]);
+    },[editingStudent]);
 
-    const handleDelete = useCallback(() => {(id) => {
+    const handleDelete = useCallback((id) => {
         dispatch({ type: ACTIONS.DELETE_STUDENT, payload: id });
-    }}, []);
+    }, []);
 
-    const handleEditClick = useCallback(() => { (student) => {
+    const handleEditClick = useCallback((student) => { 
         setEditingStudent(student);
-    }}, []);
+    }, []);
 
     const displayedStudents = useMemo(() => { return students.filter((student) => {
         const matchName = student.name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -68,6 +69,7 @@ export default function App() {
                 onSubmit={handleAddOrEdit} 
                 editingStudent={editingStudent} 
                 onCancelEdit={() => setEditingStudent(null)} 
+                majorList = {majorList}
             />
 
             <hr style={{ margin: "20px 0" }} />
@@ -85,7 +87,14 @@ export default function App() {
                     onChange={(e) => setFilterMajor(e.target.value)}
                 >
                     <option value="All Majors">All Majors</option>
-                    {students.map(student => (<option key={student.id} value={student.major}>{student.major}</option>))}
+                    {/* {
+                      students.map(student => (<option key={student.id} value={student.major}>{student.major}</option>))
+                    } */}
+                    {/* <option value="Information Technology">Information Technology</option>
+                    <option value="Business Administration">Business Administration</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Software Engineering">Software Engineering</option> */}
+                    {majorList.map((major, index) => (<option key={index} value={major}>{major}</option>))}
                 </select>
             </div>
 

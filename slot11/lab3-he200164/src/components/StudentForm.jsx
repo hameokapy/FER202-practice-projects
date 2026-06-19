@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function StudentForm({onSubmit, editingStudent, onCancelEdit}) {
+export default function StudentForm({onSubmit, editingStudent, onCancelEdit, majorList}) {
     const [formData, setFormData] = useState({
         name: "",
         age: "",
@@ -52,12 +52,21 @@ export default function StudentForm({onSubmit, editingStudent, onCancelEdit}) {
                 placeholder="Nhập tuổi..."
                 style={{width:'100px'}}
             />
-            <input
+            <select
                 name="major"
                 value={formData.major}
                 onChange={handleInputChange}
-                placeholder="Nhập chuyên ngành..."
-            />
+            >
+                <option value="">
+                    Chọn chuyên ngành...
+                </option>
+                
+                {majorList.map((major, index) => (
+                    <option key={index} value={major}>
+                        {major}
+                    </option>
+                ))}
+            </select>
             <button type="submit">
                 {editingStudent ? "Edit" : "Add"} Student
             </button>
