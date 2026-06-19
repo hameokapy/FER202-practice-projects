@@ -27,8 +27,10 @@ export default function StudentForm({onSubmit, editingStudent, onCancelEdit, maj
 
     const handleSubmit = (e) => {
         e.preventDefault(); 
-        if (!formData.name.trim() || !formData.age || !formData.major.trim()) return;
-
+        if (!formData.name.trim() || !formData.age || !formData.major.trim()) {
+            alert("Cannot leave any input field empty!")
+            return;
+        }
         onSubmit(formData);
         
         setFormData({ name: "", age: "", major: "" });
@@ -40,7 +42,7 @@ export default function StudentForm({onSubmit, editingStudent, onCancelEdit, maj
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
-                placeholder="Nhập tên..."
+                placeholder="Enter name..."
             />
             <input
                 name="age"
@@ -49,7 +51,7 @@ export default function StudentForm({onSubmit, editingStudent, onCancelEdit, maj
                 max={100}
                 value={formData.age}
                 onChange={handleInputChange}
-                placeholder="Nhập tuổi..."
+                placeholder="Enter age..."
                 style={{width:'100px'}}
             />
             <select
@@ -58,7 +60,7 @@ export default function StudentForm({onSubmit, editingStudent, onCancelEdit, maj
                 onChange={handleInputChange}
             >
                 <option value="">
-                    Chọn chuyên ngành...
+                    -- Select major --
                 </option>
                 
                 {majorList.map((major, index) => (
