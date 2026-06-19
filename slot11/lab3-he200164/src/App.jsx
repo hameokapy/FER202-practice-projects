@@ -5,6 +5,7 @@ import { useTheme } from "./contexts/ThemeContext";
 import StudentForm from "./components/StudentForm";
 import StudentList from "./components/StudentList";
 import { majorList } from "./data/initialStudents";
+import StudentFilter from "./components/StudentFilter";
 
 const initialStudents = [
     { id: 1718928000000, name: "Nguyễn Văn A", age: 21, major: "Software Engineering" },
@@ -73,23 +74,14 @@ export default function App() {
             />
 
             <hr style={{ margin: "20px 0" }} />
-
-            <div style={{ display: "flex", gap: "10px", marginBottom: "10px" }}>
-                <input
-                    type="text"
-                    placeholder="Search by name..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                />
-                
-                <select 
-                    value={filterMajor} 
-                    onChange={(e) => setFilterMajor(e.target.value)}
-                >
-                    <option value="All Majors">All Majors</option>
-                    {majorList.map((major, index) => (<option key={index} value={major}>{major}</option>))}
-                </select>
-            </div>
+            
+            <StudentFilter 
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+              filterMajor={filterMajor}
+              setFilterMajor={setFilterMajor}
+              majorList={majorList}
+            />
 
             <StudentList 
                 students={displayedStudents} 
