@@ -37,11 +37,13 @@ export default function StudentForm({onSubmit, editingStudent, onCancelEdit}) {
     return (
         <form onSubmit={handleSubmit}>
             <input
+                name="name"
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder="Nhập tên..."
             />
             <input
+                name="age"
                 type="number"
                 min={0}
                 max={100}
@@ -51,6 +53,7 @@ export default function StudentForm({onSubmit, editingStudent, onCancelEdit}) {
                 style={{width:'100px'}}
             />
             <input
+                name="major"
                 value={formData.major}
                 onChange={handleInputChange}
                 placeholder="Nhập chuyên ngành..."

@@ -1,4 +1,4 @@
-import { useReducer, useState, useEffect } from "react";
+import { useReducer, useState, useEffect, useCallback, useMemo } from "react";
 import studentReducer, { ACTIONS } from "./reducers/studentReducer";
 import useLocalStorage from "./hooks/useLocalStorage";
 import { useTheme } from "./contexts/ThemeContext";
@@ -25,28 +25,28 @@ export default function App() {
     const [searchTerm, setSearchTerm] = useState("");
     const [filterMajor, setFilterMajor] = useState("All Majors");
 
-    const handleAddOrEdit = (studentData) => {
+    const handleAddOrEdit = useCallback(() => { (studentData) => {
         if (editingStudent) {
             dispatch({ type: ACTIONS.UPDATE_STUDENT, payload: studentData });
             setEditingStudent(null); 
         } else {
             dispatch({ type: ACTIONS.ADD_STUDENT, payload: studentData });
         }
-    };
+    }},[editingStudent]);
 
-    const handleDelete = (id) => {
+    const handleDelete = useCallback(() => {(id) => {
         dispatch({ type: ACTIONS.DELETE_STUDENT, payload: id });
-    };
+    }}, []);
 
-    const handleEditClick = (student) => {
+    const handleEditClick = useCallback(() => { (student) => {
         setEditingStudent(student);
-    };
+    }}, []);
 
-    const displayedStudents = students.filter((student) => {
+    const displayedStudents = useMemo(() => { return students.filter((student) => {
         const matchName = student.name.toLowerCase().includes(searchTerm.toLowerCase());
         const matchMajor = filterMajor === "All Majors" || student.major === filterMajor;
         return matchName && matchMajor;
-    });
+    })}, [students, searchTerm, filterMajor]);
 
     return (
         <div 
@@ -92,13 +92,13 @@ export default function App() {
                 </select>
             </div>
 
-            <p><strong>Total students showing:</strong> {displayedStudents.length}</p>
-
             <StudentList 
                 students={displayedStudents} 
                 onEdit={handleEditClick} 
                 onDelete={handleDelete} 
             />
+            
+            <p><strong>Total students showing:</strong> {displayedStudents.length}</p>
         </div>
     );
 }
