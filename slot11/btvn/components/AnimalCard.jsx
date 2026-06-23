@@ -39,8 +39,9 @@ AnimalCard.propTypes = {
     })
 };
 
+//React 19: React team đã bỏ propTypes runtime checking cho function components.
+
 // 5. Cấu hình giá trị mặc định cho additional nằm bên trong object animal
-// NOTE: tình hình là cái này bị depreciated ở react18+ r nên coi như vô dụng, đành dùng chỗ gán default ở đầu hàm
 AnimalCard.defaultProps = {
     additional: {
         notes: 'No Additional Information'
