@@ -4,13 +4,8 @@ import useLocalStorage from "./hooks/useLocalStorage";
 import { useTheme } from "./contexts/ThemeContext";
 import StudentForm from "./components/StudentForm";
 import StudentList from "./components/StudentList";
-import { majorList } from "./data/initialStudents";
+import { initialStudents, majorList } from "./data/initialStudents";
 import StudentFilter from "./components/StudentFilter";
-
-const initialStudents = [
-    { id: 1718928000000, name: "Nguyễn Văn A", age: 21, major: "Software Engineering" },
-    { id: 1718928000001, name: "Trần Thị B", age: 20, major: "Information Technology" }
-];
 
 export default function App() {
     const { darkMode, toggleTheme } = useTheme();
