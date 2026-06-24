@@ -31,20 +31,25 @@ export default function StudentForm({onSubmit, editingStudent, onCancelEdit, maj
             alert("Cannot leave any input field empty!")
             return;
         }
-        onSubmit(formData);
-        
-        setFormData({ name: "", age: "", major: "" });
+        if(window.confirm("Are you sure to add new student?")) {
+            onSubmit(formData);
+            
+            setFormData({ name: "", age: "", major: "" });
+
+        }
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="d-flex flex-column gap-2">
             <input
+                className="flex-fill"
                 name="name"
                 value={formData.name}
                 onChange={handleInputChange}
                 placeholder="Enter name..."
             />
             <input
+                className="flex-fill"
                 name="age"
                 type="number"
                 min={0}
@@ -52,9 +57,9 @@ export default function StudentForm({onSubmit, editingStudent, onCancelEdit, maj
                 value={formData.age}
                 onChange={handleInputChange}
                 placeholder="Enter age..."
-                style={{width:'100px'}}
             />
             <select
+                className="flex-fill"
                 name="major"
                 value={formData.major}
                 onChange={handleInputChange}
@@ -69,6 +74,7 @@ export default function StudentForm({onSubmit, editingStudent, onCancelEdit, maj
                     </option>
                 ))}
             </select>
+            <div className="text-center">
             <button type="submit">
                 {editingStudent ? "Edit" : "Add"} Student
             </button>
@@ -77,6 +83,7 @@ export default function StudentForm({onSubmit, editingStudent, onCancelEdit, maj
                     Cancel
                 </button>
             )}
+            </div>
         </form>
     )
 }
