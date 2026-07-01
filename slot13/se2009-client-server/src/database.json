@@ -1,59 +1,19 @@
 {
   "posts": [
     {
-      "id": "1",
-      "title": "React",
-      "author": "Khiem Vu"
+      "title": "hello world",
+      "author": "yeh",
+      "id": "ITu0Urwy3kE"
     },
     {
-      "title": "Updated Title",
-      "author": "Updated Author",
-      "id": "0a1f"
+      "title": "gfdg",
+      "author": "dfgdfg",
+      "id": "SUaiyqcOWR8"
     },
     {
-      "title": "News",
-      "author": "Tran Anh",
-      "id": "1MF8xoo3Fgo"
-    },
-    {
-      "title": "gsdfdff",
-      "author": "sdfsdf",
-      "id": "dInPwDyylRY"
-    },
-    {
-      "title": "gsdfdffsdfsdf",
-      "author": "sdfdsf",
-      "id": "BeuA_U-n4g0"
-    },
-    {
-      "title": "hehehe",
-      "author": "wajtklsdfjksdff",
-      "id": "m-6d11s6LbM"
-    },
-    {
-      "title": "sdfsdf",
-      "author": "sdfdsf",
-      "id": "biJys5ajBc8"
-    },
-    {
-      "title": "dfdf",
-      "author": "dfdfdf",
-      "id": "4c0edjpIVaI"
-    },
-    {
-      "title": "heheh",
-      "author": "sldfjsldkf",
-      "id": "IqOOeO3qfXo"
-    },
-    {
-      "title": "slkdfjsd",
-      "author": "lkdjflksjdf",
-      "id": "7l1W74ajd7A"
-    },
-    {
-      "title": "sdfdskfj",
-      "author": "lkjsdflksdjf",
-      "id": "U5_GHsiMb5Q"
+      "title": "hohoho",
+      "author": "hehehe",
+      "id": "C0wK9_vHL1M"
     }
   ],
   "users": [
